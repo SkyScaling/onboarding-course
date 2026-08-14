@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Onboarding Course | Sky Scaling</title>
-<meta name="description" content="Everything you need to know about the Sky Scaling platform, in eight videos.">
+<meta name="description" content="Your Sky Scaling onboarding, module by module.">
 <meta name="theme-color" content="#06080F">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="https://assets.cdn.msgsndr.com/cIEiGPHzRWPAUucJJ6QA/media/63b8dfe3b7386074555ef2bb.png">
@@ -17,45 +17,390 @@
     PILL: "Onboarding",
     CONTACT_EMAIL: "hello@skyscaling.com",
 
-    /* ---- THE VIDEOS ----
-       Add, remove, or reorder freely. The numbers on screen come from the
-       order here, so you never renumber anything by hand.
+    /* ---- MODULES ----
+       section  - group heading; a new heading prints whenever it changes
+       title    - module heading (numbers come from order, never renumber by hand)
+       tag      - small label above the title, optional
+       blurb    - short intro under the title, optional
+       video    - YouTube, Vimeo, or a direct file URL, optional
+       poster   - thumbnail image, optional
+       steps    - "what you'll do" bullets, optional
+       accordions - expandable detail: [{ q:"title", a:"paragraph" }] or [{ q:"title", list:["",""] }]
+       docs     - downloads/links: [{ label, url }], optional
+       form     - a "fill this out" button: { label, url }, optional
+    */
+    MODULES: [
 
-       "video" takes a YouTube link, a Vimeo link, or a direct file URL.
-       If you ever move these to YouTube, just paste the YouTube URL here and
-       everything else keeps working. "poster" is the thumbnail. */
-    VIDEOS: [
-      { title: "Welcome to Sky Scaling",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48e14ec3647749425951.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b49e29574cb1f59d212b4.svg" },
+      /* ===== START HERE ===== */
+      { section: "Start here",
+        title: "Welcome to Sky Scaling", tag: "Start here",
+        blurb: "A quick hello, who I am, and what we're about to build together over the next couple of months. Watch this first, it's the map for everything that follows.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6b6c83497cd89d2490470f.mov", poster: "",
+        steps: ["Watch the welcome video", "Save this page, you'll be back here a lot", "Message us on Discord with any questions"] },
 
-      { title: "CRM & Mobile Apps Onboarding",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48ee36ce1b3e879a6470.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4a26dbe569a25de21ed2.svg" },
+      { section: "Start here",
+        title: "How the Authority System Works + Your 8-Week Build",
+        blurb: "The big picture. What we're building, why it's built on your brand, and exactly what the next eight weeks look like.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2cd1a6f7a5eaaa28539.mov", poster: "",
+        accordions: [
+          { q: "What's yours vs what's ours",
+            list: ["Yours forever: your Facebook, Instagram, domain, ad account, content, and contacts",
+                   "Ours, licensed while you're with us: the CRM, funnels, automations, and AI assistant",
+                   "We operate all of it for you, the posting, the pages, the campaigns"] },
+          { q: "The 8-week build, week by week",
+            list: ["Weeks 1-2: account setup and socials built around your niche",
+                   "Weeks 3-4: first videos posted, funnel tested end to end",
+                   "Weeks 5-6: hooks dialed in, best videos flagged as ad candidates",
+                   "Weeks 7-8: campaign built, final QA, launch call",
+                   "Ads go live at the start of month 3. We meet every single week."] },
+          { q: "The calls you'll be on",
+            list: ["A quick <b>onboarding call</b> to walk you through this course and the next two months",
+                   "A <b>setup call</b> where we wire up your ad account, domain, and socials together",
+                   "Then a <b>working call every single week</b> of the build. That's where your brand actually gets built with you, not alone."] },
+          { q: "Why two months and not two weeks",
+            a: "A brand-new page and ad account running financial ads gets flagged and shut down if there's no real activity behind it. The build warms it up so it survives, and it makes your brand credible before we ever send traffic to it." }
+        ],
+        steps: ["Watch the video", "Read your Program Overview below", "Come to your setup call with your headshot ready"],
+        docs: [ { label: "Program Overview", url: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a60e2e244497f2c4a57badf.pdf" } ] },
 
-      { title: "In-Depth Platform and Apps Tutorial",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48ebea36308bcf8fc698.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4a580a69f1e766094ca4.svg" },
+      /* ===== GET SET UP FIRST ===== */
+      { section: "Get set up first",
+        title: "Logging Into Your CRM and Mobile App",
+        blurb: "Your first practical step. Get into the CRM on your laptop and your phone, this is where everything lives, including these videos.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2109a8605ccbf26ba2e.mov", poster: "",
+        accordions: [
+          { q: "Logging in for the first time",
+            list: ["Go to <b><a href=\"https://app.skyscaling.com\" target=\"_blank\" rel=\"noopener\">app.skyscaling.com</a></b>, that's your CRM and it's where everything lives, including these videos",
+                   "Use the email we have on file for you",
+                   "Use the temporary password from your welcome email",
+                   "You'll get a 2-factor code by email or text, paste it in",
+                   "Bookmark the CRM so you don't have to re-verify every time"] },
+          { q: "Change your password right away",
+            a: "In Settings, My Profile, top right, there's a change-password box. Put in the temporary password, set your new one, and save so nobody else can get into your account." },
+          { q: "Connecting your calendar and Zoom",
+            list: ["Settings → My Profile → <b>Calendar Settings</b> → Add New. Connect Google, Outlook, iCloud or Calendly. This stops you getting double booked, because we check your other calendar for conflicts before letting anyone book",
+                   "<b>Calendly users, heads up:</b> a direct connection needs the paid version of Calendly. The workaround is to connect Calendly to a Google calendar, then connect that Google calendar to us. All three stay in sync",
+                   "If the loading wheel spins forever, refresh the page and reconnect. A green check mark means it's linked",
+                   "Then <b>Video Conferencing</b> → Add New → connect Zoom. Our whole system runs on Zoom",
+                   "<b>The one that trips people up:</b> the Zoom account you connect here has to be the same Zoom account you're logged into on your computer. If they're different, your meetings won't show up in Zoom and you'll be scrambling"] },
+          { q: "Setting your availability (this one actually matters)",
+            list: ["My Profile, scroll to the bottom. <b>This is one of the biggest factors in how many meetings you book</b>",
+                   "Put in as much availability as you can. Setting 9am to 8pm doesn't mean you'll be booked all day, it just opens the window. Some prospects are only free early, some only late",
+                   "<b>Try not to take more than two days off in a week.</b> Here's why: your calendar is capped at 3 days of forward availability on purpose, because bookings further out no-show far more often. If you're only open Thursday and Friday and a lead comes in Sunday, they can't book at all",
+                   "Check your time zone, then hit <b>Update Availability</b>",
+                   "We'll review your availability during your account setup and tell you if we think it's too thin"] },
+          { q: "Why we need a payment method on file",
+            a: "This isn't a Sky Scaling charge. Every account includes <b>$20 a month in SMS and email credits</b>, which is roughly 400 to 500 messages and plenty for almost everyone. But the CRM won't run without a card and a billing address on file, and if you ever go over, it tops up in small increments. You will never be billed for anything Sky Scaling or Facebook related through here." },
+          { q: "The mobile app",
+            list: ["Download the Lead Connector app, it's the mobile version of your CRM for managing leads on the go",
+                   "Log in with your new password",
+                   "Turn on notifications so you never miss a lead"] }
+        ],
+        steps: ["Log in and change your password", "Bookmark the CRM", "Download the Lead Connector app and log in", "Turn on notifications"],
+        docs: [ { label: "Log in to your CRM (app.skyscaling.com)", url: "https://app.skyscaling.com" }, { label: "CRM Setup Checklist", url: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a60e2e2ab5cbf799af3b0b7.pdf" }, { label: "Download LeadConnector (iPhone)", url: "https://apps.apple.com/us/app/lead-connector/id1564302502" }, { label: "Download LeadConnector (Android)", url: "https://play.google.com/store/apps/details?id=com.LeadConnector" } ] },
 
-      { title: "Lead Generation Process",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48efc56db4013f951ae0.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4ab02e98e28fa1a50994.svg" },
+      { section: "Get set up first",
+        title: "Join the Community",
+        blurb: "This is our home base, and it's how we'll stay in touch throughout the whole program. Our Discord is where we talk to you day to day: updates, questions, support, and where advisors share their wins. Anything you need from us, this is the fastest place to reach us, so join now and turn on notifications so you never miss a thing.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2109a8605ccbf26ba25.mov", poster: "",
+        accordions: [
+          { q: "You'll get your own private channel",
+            a: "Once you join, <b>we create a private channel just for you, named with your name.</b> It usually shows up a day or two after you're in. That channel is where everything happens: me, your CSM and our video editor all message you there, and it's where your finished video edits get delivered. So keep an eye on it, and turn on notifications so you don't miss anything." },
+          { q: "Desktop or mobile, both work",
+            list: ["Download the <b>Discord app</b> on your phone using the links below",
+                   "Or log in on desktop at <b>discord.com</b>, same account",
+                   "It's completely free, there's nothing to pay for",
+                   "Between this and the Lead Connector app, that's it. Two apps on your phone, two on desktop, and you're fully set up"] }
+        ],
+        steps: ["Click the link below to join our Discord", "Introduce yourself so we know you're in", "Look for your private channel, it appears a day or two after you join", "Turn on notifications so you catch every update and answer"],
+        docs: [ { label: "Join the Discord community", url: "https://discord.gg/QxgPeAgta" }, { label: "Download Discord (iPhone)", url: "https://apps.apple.com/us/app/discord-talk-play-hang-out/id985746746" }, { label: "Download Discord (Android)", url: "https://play.google.com/store/apps/details?id=com.discord" } ] },
 
-      { title: "Resources Page & Scripts",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48e1c56db4013f951a3a.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4ae6dbe569a25de24984.svg" },
+      { section: "Get set up first",
+        title: "Platform and Apps Tutorial",
+        blurb: "The full walkthrough. How the CRM works day to day: your dashboard, conversations, calendars, contacts, and pipeline. Longer video, most important one.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab210fefae3973ad59691.mov", poster: "",
+        accordions: [
+          { q: "Never call leads from the CRM (read this one)",
+            a: "The phone number attached to your CRM is an internet number, not a real carrier number. When you call from it, it shows up on your prospect's phone as <b>Likely Spam</b> or <b>Possibly Fraudulent</b>, and they don't pick up. <b>Always copy their number and call from your own phone.</b> Texting from the CRM is completely fine, it's calling that's the problem. One more thing: on a brand-new account there's no phone number provisioned yet, so if you try to text yourself while testing and nothing sends, that's normal." },
+          { q: "Unread vs All (where conversations go to hide)",
+            a: "A conversation stays in <b>Unread</b> until you actually click Mark as Read. That's on purpose, so nothing gets marked read just because you clicked around. The most common question I get is \"I lost a conversation from last week\", and it's almost always because they're looking in Unread instead of <b>All</b>. Check All." },
+          { q: "Your calendars, and what each is for",
+            list: ["Discovery call: the 15-minute phone call, sends your phone number",
+                   "Strategy meeting (Zoom): the longer video call, sends the Zoom link",
+                   "Strategy meeting (in-person): sends the address instead of a link. <b>When you book this one, click Custom under meeting location and type the full address</b>, otherwise they get nothing",
+                   "The only real difference is the confirmation and reminder sequence each one sends",
+                   "In the calendar view, <b>always filter by Users, not Calendars.</b> Users shows every appointment under your name across all three calendars, plus anything in your connected Google or Outlook calendar"] },
+          { q: "The pipeline, and what's automated",
+            list: ["New leads land in the first stage, then auto-move at 3, 7, and 14 days if they haven't booked",
+                   "Booked appointments move automatically",
+                   "You manually move people to No-Show (careful, it triggers the no-show sequence) or Follow-Up after calls",
+                   "Always work left to right, focus on the freshest leads"] },
+          { q: "Turning the AI on or off",
+            a: "Open the contact's page, find the Appointwise section, switch it off, and save. Always turn it off before you manually message someone so you don't overlap with the AI." },
+          { q: "Finding a lead's form answers",
+            a: "Click the contact, and their survey answers show on the contact page. That's how you see exactly what they said before you call." }
+        ],
+        steps: ["Follow along inside your own account", "Try each feature as it's shown", "Re-watch the calendar and pipeline parts if needed"] },
 
-      { title: "Sky Scaling Community",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48e12e98e28fa1a4a42d.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4b2879e7d2632f6090fc.svg" },
+      /* ===== HOMEWORK BEFORE WE BUILD ===== */
+      { section: "Your homework before we build",
+        title: "What to Have Ready",
+        blurb: "Almost no homework here. The one real thing we need from you is a great headshot. Everything else, the page, the Instagram, the ad account, we set up with you.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab210497cd89d24c4b3c7.mov", poster: "",
+        steps: ["Send us a high-quality headshot", "Send your Instagram and Facebook handles if you already have accounts", "No accounts yet? No problem, we'll build them with you on the call"],
+        form: { label: "Submit your headshot and handles", url: "https://brandassetsform.speakwithskyscaling.com" } },
 
-      { title: "Sky Scaling AI Chatbot",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48e1f76fcc3e52536a70.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4b95ea36308bcf8fe3f1.svg" },
+      { section: "Your homework before we build",
+        title: "Finding Your Niche and Audience",
+        blurb: "Who are you serving? This is the foundation of your whole brand. Watch the video, fill out your Brand Strategy Form below, and we lock your niche in together on your first call. You don't have to figure it all out alone.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2109a8605ccbf26ba29.mov", poster: "",
+        accordions: [
+          { q: "Niches that work well for recruiting",
+            list: ["Sales professionals (D2D, solar, pest control, high-ticket closers)",
+                   "Corporate professionals and breadwinners",
+                   "Healthcare and military professionals",
+                   "Licensed professionals (realtors, mortgage agents, already-licensed insurance agents)",
+                   "Stay-at-home parents and working parents",
+                   "Immigrant backgrounds, young ambitious professionals",
+                   "<b>Why recruiting needs to be this specific:</b> your prospect is scrolling past a hundred opportunity ads a week. Naming their exact job is what stops the scroll."] },
+          { q: "Niches that work well for client acquisition",
+            list: ["<b>Young families and new parents</b> for life insurance",
+                   "<b>Tradespeople and construction workers</b> for living benefits and income protection",
+                   "<b>Self-employed Canadians and sole proprietors</b> for income protection (no EI, no sick days, no employer coverage)",
+                   "<b>Business owners and incorporated professionals</b> for IFA, key person and corporate-owned insurance",
+                   "<b>New homeowners and anyone carrying a mortgage</b> for mortgage protection",
+                   "<b>Newcomers to Canada</b> for first-time coverage",
+                   "<b>Pre-retirees, 50 to 65</b> for estate planning and final expense",
+                   "<b>High-income professionals</b> for tax-sheltered growth and participating whole life",
+                   "<b>On the client side you can run broader.</b> Pairing a product with an occupation, like tradespeople plus living benefits, is usually enough. You don't need to nail age and income the way you do for recruiting."] },
+          { q: "How to pick, the checklist",
+            list: ["They must already be making money, don't market to desperate people",
+                   "The niche should resonate with you on a personal level",
+                   "Bonus: market to the person you used to be before insurance"] }
+        ],
+        steps: ["Watch the video", "Fill out your Brand Strategy Form below", "Be specific: occupation, income range, age, gender, location"],
+        form: { label: "Fill out your Brand Strategy Form", url: "https://marketingstrategyform.speakwithskyscaling.com" } },
 
-      { title: "Onboarding Conclusion",
-        video:  "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b48e1c56db4013f951a38.mov",
-        poster: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a0b4bb40a69f1e76609a005.svg" }
+      { section: "Your homework before we build",
+        title: "Your Instagram (We Build It With You)",
+        blurb: "We build and optimize your Instagram with you, you're not doing this alone. Here's what it'll look like when it's done, plus the couple of things we need from you.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2109a8605ccbf26ba1f.mov", poster: "",
+        accordions: [
+          { q: "Username examples",
+            list: ["Use your real name plus what you do. Clean and professional, no influencer handles.",
+                   "<b>johndoe.financial</b>",
+                   "<b>johndoe.insurance</b>",
+                   "<b>john.doe.advisor</b>",
+                   "<b>johndoefinancial</b>",
+                   "Avoid numbers, symbols, or nicknames like jdinsurance99"] },
+          { q: "Your bio (the \"I help\" formula)",
+            list: ["<b>Line 1, what you do:</b> \"I help [niche] [outcome].\" Example: <b>I help self-employed Canadians protect their income</b>",
+                   "<b>Line 2, one credential or result:</b> licensed advisor, years in business, families helped",
+                   "<b>Line 3, one call to action:</b> your booking link, or \"DM me [keyword]\"",
+                   "Full example: <b>Helping business owners protect their income.</b> Licensed advisor. Book a free 15-min call."] },
+          { q: "Clean up your grid before we run ads",
+            list: ["Archive or delete <b>off-brand posts</b>: random personal stuff, memes, low-quality photos",
+                   "Remove <b>motivational reposts you didn't create</b>",
+                   "Anything that doesn't fit a professional advisor, hide it. <b>We won't run ads to a messy profile.</b>"] },
+          { q: "Your profile photo",
+            a: "A <b>clean, well-lit headshot</b> of your face. No logos, no group photos, no sunglasses. This is the first thing a lead sees." },
+          { q: "Real pages we built (look at these for ideas)",
+            list: ["These are all live Instagram pages we built. Open them and see how it's done:",
+                   "<a href=\"https://instagram.com/gabrieltremblay.ca\" target=\"_blank\">@gabrieltremblay.ca</a>",
+                   "<a href=\"https://instagram.com/skyscaling.ca\" target=\"_blank\">@skyscaling.ca</a>",
+                   "<a href=\"https://instagram.com/financebridges\" target=\"_blank\">@financebridges</a>"] }
+        ],
+        steps: ["Send us your Instagram handle if you already have one", "Have your login ready if we're building it from scratch", "Send us a clean, well-lit headshot"] },
+
+      { section: "Your homework before we build",
+        title: "Your Facebook (We Build It With You)",
+        blurb: "Same for Facebook. We build your page with you on the call. Here's what a working advisor page looks like, and what we need from you.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab235cdfcf04956b26cd6.mov", poster: "",
+        accordions: [
+          { q: "Page name examples",
+            list: ["On Facebook, use your <b>real name plus your title</b>. That's what reads professional:",
+                   "<b>John Doe - Insurance Advisor</b>",
+                   "<b>John Doe - Financial Advisor</b>",
+                   "<b>John Doe - Living Benefits Advisor</b>",
+                   "<b>John Doe - Financial Security Advisor</b>",
+                   "Keep your real name on it so people recognize and trust you"] },
+          { q: "Your bio and CTA",
+            list: ["A clear <b>\"I help [niche] [outcome]\"</b> line",
+                   "<b>One credential or result</b>",
+                   "<b>One call to action</b> pointing to your calendar"] },
+          { q: "No page yet? No problem",
+            a: "As long as you have a personal <b>Facebook account</b>, we build the business page <b>with you on the call</b>. We just need your login, you don't have to figure this out alone." },
+          { q: "Real pages we built (look at these for ideas)",
+            list: ["These are all live Facebook pages we built. Open them and see how it's done:",
+                   "<a href=\"https://www.facebook.com/profile.php?id=61589156430556\" target=\"_blank\">Gabriel Tremblay</a>",
+                   "<a href=\"https://facebook.com/skyscaling\" target=\"_blank\">Sky Scaling</a>",
+                   "<a href=\"https://www.facebook.com/profile.php?id=61570994272951\" target=\"_blank\">FinanceBridges</a>"] }
+        ],
+        steps: ["Have a personal Facebook account so we can build the page", "Have your login ready for the setup call", "That's it, we handle the build"] },
+
+      /* ===== YOUR BRAND AND CONTENT ===== */
+      { section: "Your brand and content",
+        title: "Recording Your Videos",
+        blurb: "You're the face of your brand, so let's make your videos look and sound great. Framing, lighting, sound, and the exact gear I use, all in the dropdowns below.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2561a6f7a5eaaa064c6.mov", poster: "",
+        accordions: [
+          { q: "If you're dreading this part, read this first",
+            a: "If you're looking at this module thinking <i>I don't want to record videos, maybe I shouldn't have done this</i>, I want you to hear something. When I started Sky Scaling almost four years ago, putting my face on social media was the <b>last</b> thing I ever thought I'd do. I'm shy. I'm an introvert. I was certain I'd never do it.<br><br>It's the best business decision I've ever made. Sky Scaling would not be where it is today, and honestly might not exist, if I hadn't decided to run my own ads and build my own brand with my own face on it.<br><br>And your first few videos will suck. Mine did. <b>If your first few videos don't suck, that's actually a problem</b>, because it means you overthought it and spent too long. If you can't look back in six months and cringe, you started too slow. So just jump in. Everyone starts somewhere." },
+          { q: "Ads vs organic: two different standards",
+            list: ["An <b>ad</b> is something you pay for strangers to see, and it's often the very first thing they'll ever see of you. It needs to look polished and professional. That's when I put my phone on a tripod and read a script",
+                   "An <b>organic post</b> is just you showing up on your own page. Mine actually perform <b>better</b> handheld, phone in one hand, mic in the other. Less polished, more real",
+                   "So don't hold your organic videos to ad standards. Natural wins there. Save the effort for the ads"] },
+          { q: "You don't need a separate teleprompter app",
+            a: "In the video I mention downloading a teleprompter app. You don't have to. <b>The Edits app has a teleprompter built right in</b> (module 11), so you can paste your script and record from the same app you're already going to edit in. One less thing to download." },
+          { q: "Framing: eyes in the top third",
+            list: ["Frame yourself so <b>your eyes sit in the upper third of the screen</b>, not dead center",
+                   "Leave a little headroom, don't cut off the top of your head and don't float in the middle",
+                   "Get close enough that <b>you fill the frame</b>. You're the focus, not the room",
+                   "Camera at <b>eye level</b> and steady on a tripod, never pointing up at you from your lap"] },
+          { q: "Lighting",
+            list: ["<b>Face your light.</b> A window or a lamp in front of you, never behind you",
+                   "Soft, even light beats harsh light (a softbox or ring light does this)",
+                   "<b>No bright window or light behind you</b> or you'll be a dark silhouette",
+                   "Keep the color natural so your skin isn't orange or blue"] },
+          { q: "Sound",
+            list: ["A <b>dedicated mic beats your camera or laptop mic</b> every time",
+                   "Record in a quiet room, close the windows, kill the background noise",
+                   "Do a 10-second test and <b>listen back</b> before you record the whole thing"] },
+          { q: "The exact gear I use (I bought every one of these myself)",
+            a: "This is the real kit I use and tested myself, so you're not guessing. Grab whatever fits your budget, you don't need all of it to start.<br><br><b>Cameras / webcams</b><br>• <a href='https://amzn.to/4fg4e3B' target='_blank' rel='noopener'>Insta360 Link 2C (4K webcam)</a>: clean picture straight into your computer for Zoom and recording<br>• <a href='https://amzn.to/44HGz5W' target='_blank' rel='noopener'>EMEET NOVA 4K webcam</a>: solid, cheaper 4K option<br><br><b>Microphone</b><br>• <a href='https://amzn.to/4vJepTe' target='_blank' rel='noopener'>DJI Mic Mini</a>: wireless lav mic, the single biggest upgrade over camera audio<br><br><b>Lighting</b><br>• <a href='https://amzn.to/4wzO63b' target='_blank' rel='noopener'>SmallRig P96L RGB light</a>: small, portable key light<br>• <a href='https://amzn.to/4wjBqgH' target='_blank' rel='noopener'>UBeesize softbox kit</a>: soft, even studio lighting<br>• <a href='https://amzn.to/3Tiatv0' target='_blank' rel='noopener'>Obeamiu 2-pack LED lights + stands</a>: a full two-light setup<br>• <a href='https://amzn.to/4wsyJsU' target='_blank' rel='noopener'>Foscomax ring light</a>: quick clip-on light for your laptop<br><br><b>Tripod</b><br>• <a href='https://amzn.to/4fgEiVl' target='_blank' rel='noopener'>NEEWER tripod / monopod</a>: keeps your shot steady at eye level" }
+        ],
+        steps: ["Set up your space, lighting, and camera at eye level", "Frame your eyes in the top third", "Record a short test and watch AND listen back", "Record your script naturally, a few takes is fine"] },
+
+      { section: "Your brand and content",
+        title: "Editing Your Videos (Edits)",
+        blurb: "Simple editing you can do yourself, all in one free app. We use Edits, made by Instagram. Trim it, caption it, post it. Full steps in the dropdowns.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2591a6f7a5eaaa0651e.mov", poster: "",
+        accordions: [
+          { q: "Why we use Edits",
+            list: ["It's <b>completely free</b>, with <b>no watermark</b> on your exports",
+                   "Trimming and captions are in <b>one app</b>, so there's nothing to export back and forth",
+                   "It's made by Instagram, so it <b>posts straight to your Reels</b> and shows you how they performed",
+                   "Personally I use <b>CapCut and the Captions app</b> for my own editing, and they're both great. But they're paid, and for what you need to do here, Edits does the same job for free. That's why we teach it."] },
+          { q: "Trimming your clip",
+            list: ["Import your clip and <b>cut the dead space</b> at the start and the end",
+                   "Cut the long pauses, the ums, and any restarts so it moves",
+                   "<b>Don't over-edit.</b> Natural is good, just tighten it up so there's no dead air"] },
+          { q: "Adding your captions",
+            list: ["Tap to <b>auto-generate captions</b>, then read through and fix anything it misheard",
+                   "<b>Most people watch on mute</b>, so captions aren't optional",
+                   "Keep the style clean and readable, not flashy or distracting"] },
+          { q: "Export and post",
+            list: ["Export in the <b>highest quality</b>, there's no watermark to worry about",
+                   "Post it yourself straight to Reels, or <b>send it to us and we'll post it for you</b>",
+                   "You can publish to Instagram and Facebook right from inside Edits, so you don't even need to export to your phone first"] },
+          { q: "If you'd rather not edit at all",
+            a: "You don't have to. We have an in-house editor, <b>John</b>, and you'll see him in your Discord channel. Send him your raw clips and he'll handle it.<br><br><b>$20 per video</b> for a simple edit, which is exactly what I just showed you: trimming, colour, and clean captions.<br><b>$75 per video</b> for a pro edit with B-roll and animations.<br><br>Two honest notes. <b>I don't make a cent on either of these</b>, it all goes to John. And do the math on the simple edits: at three or four organic videos a week that's $80 a week, so you're much better off learning to do those yourself. Where the pro edit genuinely earns its money is your <b>ads</b>, because those are polished, they're the first thing a stranger sees, and you're paying for people to watch them." }
+        ],
+        steps: ["Download Edits and import your clip", "Trim the dead space", "Auto-generate your captions and fix any errors", "Export and post, or send it to us"],
+        docs: [ { label: "Download Edits (iPhone)", url: "https://apps.apple.com/ca/app/edits-video-editor/id6738967378" },
+                { label: "Download Edits (Android)", url: "https://play.google.com/store/apps/details?id=com.instagram.basel" } ] },
+
+      { section: "Your brand and content",
+        title: "What Makes a Profile Actually Work",
+        blurb: "The difference between a dead page and a real advisor brand: hooks, your story, and consistent posting.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2639a8605ccbf26bf9a.mov", poster: "",
+        accordions: [
+          { q: "What makes a scroll-stopping hook",
+            a: "The first line has to stop the scroll for your exact person. Call out who it's for and the problem they feel, in their own words, in the first three seconds." },
+          { q: "Your two pinned posts",
+            list: ["One that tells your story, who you are and why you do this",
+                   "One that explains exactly what you do and who you help"] },
+          { q: "Posting cadence",
+            a: "Post something every two to three days. The grid should start to look like a real, living brand, not an empty shell. Between the static posts we handle for you (about 3 a week) and your own videos, you're aiming for roughly <b>six to seven posts a week</b>." },
+          { q: "How your ads and your organic content work together",
+            a: "These two jobs are different and it's worth understanding why.<br><br>Your <b>ad</b> is the hook. It's polished, professional, and its only job is to earn enough trust for someone to click. Then they land on your profile.<br><br>Your <b>organic content</b> is what closes them. That's the handheld, natural, phone-in-your-hand stuff. It's where they see you're a real person, hear how you talk, and get your actual point of view. That's where the authenticity lives, and authenticity is what makes someone want to work with <i>you</i> specifically.<br><br>So the ad reels them in and the reels break you down as a human. <b>You need both.</b> A polished ad pointing at an empty profile converts nothing, and great organic content nobody sees does nothing either." }
+        ],
+        steps: ["Write hooks aimed at your one person", "Pin your story post and your what-I-do post", "Keep a steady posting rhythm"] },
+
+      /* ===== HOW YOUR LEADS WORK ===== */
+      { section: "How your leads work",
+        title: "Your Booking + Thank-You Page Videos",
+        blurb: "The two short videos that live on your funnel: one on your booking page, one on your thank-you page. They warm leads up right when they're deciding to book and right after.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab266cdfcf04956b2b742.mov", poster: "",
+        accordions: [
+          { q: "Heads up: these are just examples",
+            a: "The scripts you see here are examples to get your ideas flowing. You don't have to write yours alone. We sit down and build your booking and thank-you page scripts together, tailored to you and your niche. Use these to start brainstorming before we meet." },
+          { q: "Filming setup (different from your ads)",
+            list: ["These are filmed <b>horizontally</b>, not vertical like your ad videos",
+                   "Use a <b>clean, professional background</b>, or record on <b>Loom walking through slides</b>",
+                   "Same rules still apply: good lighting, eye level, clear audio, show your face"] },
+          { q: "Shoot both in the same setting (small thing, big difference)",
+            a: "Record your booking page video and your thank-you page video <b>in the same spot, same background, same setup</b>. Someone who books sees both back to back, and when they match it feels like one deliberate experience instead of two random clips.<br><br>At the same time, use a <b>different setting than your ads</b>. If every single video you own was clearly shot in one afternoon in one chair, it looks like it. A different background here makes your whole brand feel more established than it actually is yet." },
+          { q: "Your booking page video",
+            list: ["A short video that <b>builds trust and curiosity</b> so more people actually book",
+                   "Quick hello, who you are, and why the call is worth their time",
+                   "Keep it warm and low pressure, you're not selling, you're inviting",
+                   "<b>Watch a real example:</b> <a href=\"https://assets.cdn.filesafe.space/YD07511ANI6LBQQguuTM/media/6a60e4a11dd882f80790fb99.mp4\" target=\"_blank\">good booking page video</a>",
+                   "<b>Read the script breakdown:</b> <a href=\"https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a60e84864ab3b1036d914df.pdf\" target=\"_blank\">booking page script example</a>"] },
+          { q: "Your thank-you page video",
+            list: ["A quick video <b>confirming their call and setting expectations</b> for what's next",
+                   "Tell them what the call will cover so they show up ready",
+                   "This is one of the biggest things that cuts down no-shows",
+                   "<b>Watch a real example:</b> <a href=\"https://assets.cdn.filesafe.space/YD07511ANI6LBQQguuTM/media/6a60e49944497f2c4a59a411.mp4\" target=\"_blank\">good thank-you page video</a>",
+                   "<b>Read the script breakdown:</b> <a href=\"https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a60e848ab5cbf799af7aac0.pdf\" target=\"_blank\">thank-you page script example</a>"] }
+        ],
+        steps: ["Record your booking page video", "Record your thank-you page video", "Film both horizontally, or as a Loom through slides", "Add them to Google Drive and share with skyscaling@hotmail.com, or send them to us on Discord"] },
+
+      { section: "How your leads work",
+        title: "Resources and Scripts",
+        blurb: "Your sales scripts, all in the resources tab: cold outreach, discovery call, strategy call, and no-show recovery. Learn these before your ads go live.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab28b497cd89d24c55120.mov", poster: "",
+        accordions: [
+          { q: "Cold outreach script",
+            a: "For calling leads who didn't book themselves. You're not selling, you're following up on something they asked about, and getting the 15-minute discovery call booked." },
+          { q: "Discovery call script",
+            a: "The 15-minute call. Understand where they're at, build a little trust, and book the strategy meeting." },
+          { q: "Strategy call script",
+            a: "The full conversation where you build the case and close. Includes the financial needs analysis and objection handling." },
+          { q: "No-show recovery",
+            a: "How to win back no-shows at both stages. Speed matters, the triple dial, and the exact steps to log and follow up." },
+          { q: "Skip the Expectation Deck for now",
+            a: "You'll see an <b>Expectation Deck</b> sitting in the resources tab alongside the four scripts. <b>Don't worry about that one yet.</b> It's the only document we go over together, and we do it on a call the day before your ads go live. Reading it now, months ahead of launch, just takes it out of context. The four scripts are what you want to focus on today." },
+          { q: "Make them yours (important)",
+            a: "These are written for income protection, but the <b>structure</b> is what wins. Download them, drop them into an AI like ChatGPT, and ask it to write you a similar script with the same structure but for your own audience, whether that's recruiting or your niche. Then learn them before your ads go live." },
+          { q: "Why we teach you this instead of just doing it",
+            a: "You're probably thinking, Gabriel, I thought you were doing all of this for me. We are. But this program is <b>done for you and done with you</b>, on purpose. Everything in this course is here so that over time you're not fully dependent on us. You'll save money by editing your own videos and writing your own scripts, and the work gets better because nobody can write in your voice like you can. We'd rather teach you how to fish than hand you a fish every month. Take what we build, make it yours, and you end up with a brand that runs whether we're in the room or not." }
+        ],
+        steps: ["Bookmark the resources tab", "Read through each script", "Adapt them to your audience with AI, keep the structure", "Learn your scripts before your ads go live"],
+        docs: [ { label: "Scripts (in your resources tab)", url: "https://skyscaling-resources.netlify.app" } ] },
+
+      /* ===== SUPPORT ===== */
+      { section: "Support",
+        title: "Using the AI Chatbot",
+        blurb: "Your 24/7 assistant. It knows the whole system, so ask it anything before you reach out to the team.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab29d497cd89d24c560e7.mov", poster: "",
+        steps: ["Open the chatbot in your CRM (desktop)", "Ask it a question to see how it works", "If it can't help, it'll point you to the team"] },
+
+      { section: "Support",
+        title: "Wrap-Up and Next Steps",
+        blurb: "You made it. Here's what happens next, and exactly how to show up ready for your setup call.",
+        video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2abcdfcf04956b38da1.mov", poster: "",
+        accordions: [
+          { q: "Step 1: message us on Discord",
+            a: "As soon as you've finished every module, <b>post in your private Discord channel and tell us you're done.</b> That's our signal that you're ready. We'll reply and lock in your setup call. Don't wait for us to check on you, message us and we move immediately." },
+          { q: "Step 2: how to show up ready for your setup call",
+            list: ["<b>Block off an hour and a half.</b> This is the longest call of the whole program and we don't want to rush it",
+                   "<b>Be on a computer, not your phone.</b> We're screen sharing and building things together",
+                   "<b>Have your Facebook login ready.</b> We build your business page with you on this call, and you can't have a page without a personal account",
+                   "<b>Have your Instagram login ready</b> if you already have one",
+                   "<b>Create the accounts ahead of time if you can.</b> A basic Facebook page and Instagram account, even empty, saves us 20 minutes of the call. Then we spend that time making them good instead of making them exist",
+                   "<b>Have a payment card handy</b> for your ad account and domain",
+                   "<b>Confirm your CRM is fully set up</b> from module 3: calendar connected, Zoom connected, availability set, billing added"] },
+          { q: "Step 3: get ahead if you want to (optional but it pays off)",
+            list: ["Read through the four sales scripts in your resources tab and start adapting them to your audience with AI",
+                   "Start drafting your booking page and thank-you page video scripts",
+                   "Think hard about your niche before we lock it in together",
+                   "<b>Everything you bring to the call is time we spend improving instead of starting.</b> The advisors who show up prepared launch faster and launch better"] },
+          { q: "What happens after the setup call",
+            a: "Before we hang up, we book your <b>Brand Diagnostic</b> right there on the call. That's a 60 minute session where we go through your Brand Strategy Form out loud, lock your niche, and pull out your story and positioning. <b>Nothing gets built until that call happens</b>, because everything we make for you over the next two months comes out of it.<br><br>After that, your 8-week build starts. You'll have a working call with us <b>every single week</b> where we build your brand piece by piece. Then at the start of month 3, your ads go live, and your first two months of ads come with a lead guarantee." }
+        ],
+        steps: ["Make sure every module above is checked off", "Message us on Discord to tell us you're done", "Block 90 minutes for your setup call and come prepared", "Book your Brand Diagnostic before that call ends", "Ads go live at the start of month 3"] }
+
     ]
   };
 </script>
@@ -70,6 +415,7 @@
     --accent:#5271ff;--accent-2:#8f6bff;--accent-d:#3f5ae6;
     --accent-glow:rgba(82,113,255,0.50);--accent-tint:rgba(82,113,255,0.13);
     --grad:linear-gradient(135deg,#5271ff 0%,#8f6bff 100%);
+    --ok:#3ddc97;--ok-tint:rgba(61,220,151,0.13);--ok-border:rgba(61,220,151,0.32);
     --text:#F5F7FE;--text-2:#AEB7D0;--text-3:#727C99;
     --radius:16px;--glow:0 22px 60px -20px var(--accent-glow);
   }
@@ -95,25 +441,96 @@
   .lead{text-align:center;color:var(--text-2);font-size:16px;line-height:1.7;max-width:600px;margin:22px auto 0}
   .lead b{color:var(--text);font-weight:600}
 
-  .meta{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:26px;color:var(--text-2);font-size:14px}
-  .meta span{display:inline-flex;align-items:center;gap:8px}
-  .meta svg{width:16px;height:16px;flex:none;color:var(--accent);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .prog{margin-top:34px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px clamp(18px,3vw,26px);box-shadow:0 20px 60px -34px rgba(0,0,0,0.9)}
+  .prog-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .prog-lab{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:-0.01em}
+  .prog-count{font-size:13.5px;color:var(--text-2)}
+  .prog-count b{color:var(--ok);font-weight:700}
+  .prog-bar{margin-top:14px;height:10px;border-radius:99px;background:rgba(148,160,196,0.12);overflow:hidden}
+  .prog-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--ok));transition:width .5s cubic-bezier(.4,0,.2,1)}
+  .prog-foot{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .prog-note{font-size:12px;color:var(--text-3)}
 
-  .lessons{margin-top:52px;display:flex;flex-direction:column;gap:52px}
-  .lesson .lhead{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-  .lesson .num{width:34px;height:34px;flex:none;border-radius:10px;background:var(--accent-tint);border:1px solid rgba(82,113,255,0.28);color:#c3ccff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:15px}
+  .sec-head{margin:0 0 -18px;display:flex;align-items:center;gap:14px}
+  .sec-head .line{flex:1;height:1px;background:var(--border)}
+  .sec-head span{font-family:'Space Grotesk';font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3);white-space:nowrap}
+
+  .lessons{margin-top:68px;display:flex;flex-direction:column;gap:68px}
+  .lesson .lhead{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .lesson .num{width:34px;height:34px;flex:none;border-radius:10px;background:var(--accent-tint);border:1px solid rgba(82,113,255,0.28);color:#c3ccff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:15px;transition:background .2s,border-color .2s,color .2s}
+  .lesson .num svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;display:none}
+  .lesson.done .num .n{display:none}
+  .lesson.done .num svg{display:block}
+  .lesson.done .num{background:var(--ok-tint);border-color:var(--ok-border);color:var(--ok)}
+  .lesson .tag{font-family:'Space Grotesk';font-weight:700;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
   .lesson h3{font-weight:700;font-size:clamp(18px,2.6vw,22px);letter-spacing:-0.01em}
+  .lesson .blurb{color:var(--text-2);font-size:15px;line-height:1.65;margin:0 0 18px 48px}
 
   .vid{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#080b14;box-shadow:0 26px 70px -30px rgba(0,0,0,0.9)}
   .vid.play-ready{cursor:pointer}
   .vid .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#080b14}
+  .vid .poster-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#080b14;pointer-events:none}
   .vid .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,7,16,0.10),rgba(4,7,16,0.02) 45%,rgba(4,7,16,0.35));transition:opacity .18s}
   .vid:hover .scrim{opacity:0.6}
-  .vid iframe,.vid video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+  .vid iframe,.vid video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;object-fit:contain}
   .vid .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:var(--grad);border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 44px -10px var(--accent-glow);transition:transform .18s;pointer-events:none}
   .vid.play-ready:hover .play{transform:translate(-50%,-50%) scale(1.08)}
   .vid .play svg{width:27px;height:27px;fill:#fff;margin-left:3px}
+  .vid-soon{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px dashed var(--border-strong);background:var(--panel);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--text-3)}
+  .vid-soon svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
+  .vid-soon span{font-family:'Space Grotesk';font-weight:600;font-size:13px;letter-spacing:0.04em}
 
+  .below{margin-top:20px;display:flex;flex-direction:column;gap:16px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+  .card h4{font-family:'Space Grotesk';font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px}
+  .steps{display:flex;flex-direction:column;gap:11px}
+  .step{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:var(--text-2)}
+  .step .dot{flex:none;width:20px;height:20px;border-radius:6px;background:var(--accent-tint);border:1px solid rgba(82,113,255,0.28);color:#c3ccff;font-family:'Space Grotesk';font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+
+  .accs{display:flex;flex-direction:column;gap:10px}
+  details.acc{background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  details.acc>summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:'Space Grotesk';font-weight:600;font-size:14.5px;color:var(--text)}
+  details.acc>summary::-webkit-details-marker{display:none}
+  details.acc>summary .chev{flex:none;width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+  details.acc[open]>summary .chev{transform:rotate(180deg)}
+  .acc-body{padding:0 18px 17px;color:var(--text-2);font-size:14px;line-height:1.6}
+  .acc-body ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .acc-body li{position:relative;padding-left:15px}
+  .acc-body li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .acc-body a{color:#a9b7ff;text-decoration:underline;font-weight:600}
+  .acc-body a:hover{color:#c3ccff}
+
+  .docs{display:flex;flex-wrap:wrap;gap:10px}
+  .doc{display:inline-flex;align-items:center;gap:9px;padding:11px 15px;border-radius:11px;background:var(--panel-2);border:1px solid var(--border);color:var(--text);font-size:13.5px;font-weight:500;text-decoration:none;transition:border-color .15s,transform .12s}
+  .doc:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+  .doc svg{width:16px;height:16px;flex:none;color:var(--accent);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .form-cta{display:inline-flex;align-items:center;gap:10px;margin-top:2px;padding:14px 22px;border-radius:12px;background:var(--grad);color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:0 16px 40px -16px var(--accent-glow);transition:transform .15s}
+  .form-cta:hover{transform:translateY(-2px)}
+  .form-cta svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+  .done-btn{margin-top:20px;display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:12px;border:1px solid var(--border-strong);background:var(--panel-2);color:var(--text);font-family:'Space Grotesk';font-weight:700;font-size:14px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+  .done-btn:hover{border-color:var(--accent)}
+  .done-btn .box{width:20px;height:20px;flex:none;border-radius:6px;border:2px solid var(--text-3);display:flex;align-items:center;justify-content:center;transition:all .15s}
+  .done-btn .box svg{width:13px;height:13px;stroke:#06080F;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+  .lesson.done .done-btn{border-color:var(--ok-border);background:var(--ok-tint);color:var(--ok)}
+  .lesson.done .done-btn .box{background:var(--ok);border-color:var(--ok)}
+  .lesson.done .done-btn .box svg{opacity:1}
+  .done-btn .lock{width:20px;height:20px;flex:none;display:none;align-items:center;justify-content:center;color:var(--text-3)}
+  .done-btn .lock svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .done-btn.is-locked{opacity:.5;cursor:not-allowed;border-style:dashed;color:var(--text-3)}
+  .done-btn.is-locked:hover{border-color:var(--border-strong)}
+  .done-btn.is-locked .box{display:none}
+  .done-btn.is-locked .lock{display:flex}
+
+  .support{margin-top:70px;background:linear-gradient(180deg,rgba(82,113,255,0.10),rgba(14,18,32,0.5));border:1px solid rgba(82,113,255,0.30);border-radius:var(--radius);padding:28px 30px;text-align:center;box-shadow:0 24px 60px -40px rgba(0,0,0,0.9)}
+  .support .lab{font-family:'Space Grotesk';font-weight:700;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#c3ccff;margin-bottom:12px}
+  .support h3{font-family:'Space Grotesk';font-weight:700;font-size:19px;letter-spacing:-0.01em;color:var(--text)}
+  .support p{color:var(--text-2);font-size:14.5px;line-height:1.65;margin:10px auto 0;max-width:540px}
+  .support .ways{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .support .ways a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;color:var(--text);background:var(--panel-2);border:1px solid var(--border-strong);border-radius:10px;padding:11px 16px;transition:border-color .16s,transform .14s}
+  .support .ways a:hover{border-color:rgba(82,113,255,0.6);transform:translateY(-1px)}
+  .support .ways svg{width:16px;height:16px;stroke:#9fb0ff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   footer{text-align:center;color:var(--text-3);font-size:12.5px;padding:44px 0 0;border-top:1px solid var(--border);margin-top:70px;line-height:1.8}
   footer a{color:var(--text-2);text-decoration:none}
   footer a:hover{color:var(--accent);text-decoration:underline}
@@ -123,11 +540,18 @@
     .logo img{height:27px}
     .pill{font-size:10px;letter-spacing:0.12em;padding:7px 12px}
     .eyebrow{margin:42px 0 14px}
-    .lessons{margin-top:36px;gap:38px}
-    .lesson .lhead{gap:11px;margin-bottom:13px}
+    .sec-head{margin:0 0 -14px}
+    .lessons{margin-top:52px;gap:52px}
+    .lesson .lhead{gap:11px;margin-bottom:8px}
     .lesson .num{width:30px;height:30px;font-size:14px}
+    .lesson .blurb{margin-left:41px}
     .vid .play{width:58px;height:58px}
-    .vid .play svg{width:22px;height:22px}
+    .card{padding:16px 17px}
+    .support{margin-top:50px;padding:22px 18px}
+    .support h3{font-size:17px}
+    .support p{font-size:14px}
+    .support .ways{gap:8px;margin-top:16px}
+    .support .ways a{width:100%;justify-content:center}
     footer{padding-top:36px;margin-top:50px}
   }
 </style>
@@ -143,16 +567,32 @@
 <div class="wrap">
 
   <div class="eyebrow">&lt; Onboarding course &gt;</div>
-  <h1 class="hero">Everything You Need, <span class="a">In Eight Videos</span></h1>
-  <p class="lead">Watch these in order. They cover how the platform works, how your leads get generated, and how to get the most out of what you're paying for. <b>The people who watch all eight get results faster.</b> That's not a sales line, it's just what we see.</p>
+  <h1 class="hero">Your Onboarding, <span class="a">Module by Module</span></h1>
+  <p class="lead">Work through these in order. Each module has a short video, the exact steps to take, and anything you'll need. <b>The people who finish every module get results faster.</b> That's not a sales line, it's just what we see.</p>
 
-  <div class="meta">
-    <span><svg viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>8 videos</span>
-    <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Watch in order</span>
-    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Come back any time</span>
+  <div class="prog" id="prog">
+    <div class="prog-top">
+      <div class="prog-lab">Your progress</div>
+      <div class="prog-count"><b id="prog-done">0</b> of <span id="prog-total">0</span> modules complete</div>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+    <div class="prog-foot">
+      <div class="prog-note">Your progress is saved on this device.</div>
+    </div>
   </div>
 
   <div class="lessons" id="lessons"></div>
+
+  <div class="support">
+    <div class="lab">Stuck at any point?</div>
+    <h3>You're never figuring this out alone.</h3>
+    <p>If anything in this course doesn't make sense, or you hit a wall setting something up, reach out. Don't sit on it for a week. Message your CSM in your Discord channel, or text Gabriel directly.</p>
+    <div class="ways">
+      <a href="https://discord.gg/QxgPeAgta" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Message us on Discord</a>
+      <a href="tel:4506004606"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Text Gabriel: 450-600-4606</a>
+      <a id="s-mail" href="mailto:hello@skyscaling.com"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>hello@skyscaling.com</a>
+    </div>
+  </div>
 
   <footer>
     <div><a id="f-mail" href="#">hello@skyscaling.com</a></div>
@@ -162,7 +602,9 @@
 
 <script>
 (function(){
+  "use strict";
   var C = window.SS_CONFIG || {};
+  var STORE_KEY = "ss_onboarding_progress_v2";
 
   var logo=document.getElementById('logo');
   if(C.LOGO_URL){ logo.src=C.LOGO_URL; }
@@ -170,84 +612,211 @@
   if(!C.LOGO_URL){ logo.onerror(); }
 
   var p=document.getElementById('pill'); if(p && C.PILL) p.textContent=C.PILL;
-
   var m=document.getElementById('f-mail');
   if(C.CONTACT_EMAIL){ m.href='mailto:'+C.CONTACT_EMAIL; m.textContent=C.CONTACT_EMAIL; }
   else { m.remove(); }
-
   var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
 
-  /* ---------- Video helpers ----------
-     Same approach as the funnel: show the poster + a play button, and only
-     load the actual video once someone clicks. Nothing downloads until then.
-     Handles YouTube, Vimeo, and direct file URLs, so moving these to YouTube
-     later means changing the url in the config and nothing else. */
+  function slug(t){ return String(t||"").toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+  function load(){ try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }catch(e){ return {}; } }
+  function save(o){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(o)); }catch(e){} }
+  var progress = load();
+
   function ytId(u){ var m=(u||"").match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/))([\w-]{6,})/); return m?m[1]:""; }
   function vimeoId(u){ var m=(u||"").match(/vimeo\.com\/(?:video\/)?(\d+)/); return m?m[1]:""; }
   function isFile(u){ return /\.(mp4|webm|mov|m4v|ogg)(\?|$)/i.test(u||""); }
-
   function embedSrc(u){
-    var y = ytId(u); if(y) return "https://www.youtube.com/embed/"+y+"?rel=0&playsinline=1&modestbranding=1&autoplay=1";
-    var v = vimeoId(u); if(v) return "https://player.vimeo.com/video/"+v+"?autoplay=1";
+    var v=ytId(u); if(v) return "https://www.youtube.com/embed/"+v+"?rel=0&playsinline=1&modestbranding=1&autoplay=1";
+    var vi=vimeoId(u); if(vi) return "https://player.vimeo.com/video/"+vi+"?autoplay=1";
     return u;
   }
-
+  /* videos are recorded in mixed aspect ratios (vertical, horizontal, square).
+     Read the real dimensions once metadata loads and resize the frame to match,
+     so nothing letterboxes and nothing gets cropped. Verticals get capped in
+     height and centred so they don't run off the screen on desktop. */
+  function fitToVideo(wrap){
+    var v=wrap.querySelector('video'); if(!v) return;
+    function apply(){
+      var w=v.videoWidth, h=v.videoHeight;
+      if(!w || !h) return;
+      wrap.style.aspectRatio = w+' / '+h;
+      if(w/h < 1.2){
+        wrap.style.maxWidth = 'calc(74vh * '+(w/h).toFixed(4)+')';
+        wrap.style.marginLeft='auto'; wrap.style.marginRight='auto';
+      }
+    }
+    if(v.readyState>=1) apply(); else v.addEventListener('loadedmetadata',apply,{once:true});
+  }
   function activate(wrap){
-    var src = wrap.getAttribute('data-src');
+    var src=wrap.getAttribute('data-src');
     if(!src || wrap.getAttribute('data-live')==="1") return;
-    wrap.setAttribute('data-live',"1");
-    wrap.classList.remove('play-ready');
+    wrap.setAttribute('data-live',"1"); wrap.classList.remove('play-ready');
     wrap.innerHTML = isFile(src)
       ? '<video src="'+src+'" controls autoplay playsinline preload="auto"></video>'
       : '<iframe src="'+embedSrc(src)+'" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>';
+    if(isFile(src)) fitToVideo(wrap);
   }
   document.addEventListener('click', function(e){
     var w = e.target.closest ? e.target.closest('.js-vid') : null;
     if(w) activate(w);
   });
 
-  /* ---------- Build the lessons from VIDEOS ----------
-     Numbers come from array order, so reordering renumbers automatically. */
-  var host = document.getElementById('lessons');
-  var items = (C.VIDEOS || []).filter(function(v){ return v && v.title; });
-  if(!host) return;
-  if(!items.length){ host.remove(); return; }
+  var CHECK='<svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>';
+  var CHEV ='<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
+  var FILE_ICON='<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
+  var LINK_ICON='<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+  function isLinkUrl(u){ return /^https?:\/\//i.test(u||'') && !/\.(pdf|docx?|xlsx?|pptx?|csv|zip|png|jpe?g|gif|svg|mp4|mov)(\?|$)/i.test(u||''); }
+  var PEN_ICON='<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+  var CLOCK='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var LOCK='<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
 
+  var host=document.getElementById('lessons');
+  var items=(C.MODULES||[]).filter(function(v){ return v && v.title; });
+  var total=items.length;
+  document.getElementById('prog-total').textContent=total;
+
+  function refreshProgress(){
+    var done=0; items.forEach(function(it){ if(progress[slug(it.title)]) done++; });
+    document.getElementById('prog-done').textContent=done;
+    document.getElementById('prog-fill').style.width=(total?Math.round(done/total*100):0)+"%";
+  }
+  function esc(s){ var d=document.createElement('div'); d.textContent=s==null?'':String(s); return d.innerHTML; }
+
+  var mods=[];
+  var lastSection=null;
   items.forEach(function(item, i){
-    var sec = document.createElement('div');
-    sec.className = 'lesson';
-
-    var head = document.createElement('div');
-    head.className = 'lhead';
-    var num = document.createElement('div'); num.className='num'; num.textContent = String(i+1);
-    var h3  = document.createElement('h3'); h3.textContent = item.title;
-    head.appendChild(num); head.appendChild(h3);
-
-    var vid = document.createElement('div');
-    vid.className = 'vid js-vid';
-    vid.setAttribute('data-src', item.video || "");
-
-    if(item.poster){
-      var im = document.createElement('img');
-      im.className='poster'; im.loading='lazy'; im.alt=item.title;
-      im.src=item.poster;
-      im.onerror=function(){ im.remove(); };
-      vid.appendChild(im);
+    if(item.section && item.section!==lastSection){
+      lastSection=item.section;
+      var sh=document.createElement('div'); sh.className='sec-head';
+      sh.innerHTML='<span>'+esc(item.section)+'</span><span class="line"></span>';
+      host.appendChild(sh);
     }
-    var scrim = document.createElement('div'); scrim.className='scrim'; vid.appendChild(scrim);
 
+    var s=slug(item.title), isDone=!!progress[s];
+    var sec=document.createElement('div'); sec.className='lesson'+(isDone?' done':'');
+
+    var head=document.createElement('div'); head.className='lhead';
+    var num=document.createElement('div'); num.className='num'; num.innerHTML='<span class="n">'+(i+1)+'</span>'+CHECK;
+    var tw=document.createElement('div');
+    if(item.tag){ var tg=document.createElement('div'); tg.className='tag'; tg.textContent=item.tag; tw.appendChild(tg); }
+    var h3=document.createElement('h3'); h3.textContent=item.title; tw.appendChild(h3);
+    head.appendChild(num); head.appendChild(tw); sec.appendChild(head);
+
+    if(item.blurb){ var bl=document.createElement('p'); bl.className='blurb'; bl.textContent=item.blurb; sec.appendChild(bl); }
+
+    /* video, or a "coming soon" placeholder so the layout holds while you record */
     if(item.video){
-      var btn = document.createElement('button');
-      btn.className='play';
-      btn.setAttribute('aria-label','Play: '+item.title);
-      btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>';
-      vid.appendChild(btn);
-      vid.classList.add('play-ready');
+      var vid=document.createElement('div'); vid.className='vid js-vid play-ready'; vid.setAttribute('data-src',item.video);
+      if(item.poster){ var im=document.createElement('img'); im.className='poster'; im.loading='lazy'; im.alt=item.title; im.src=item.poster; im.onerror=function(){im.remove();}; vid.appendChild(im); }
+      /* no poster image set: pull the first frame straight out of the video file so
+         the thumbnail is Gabriel's face instead of a black box. The #t= fragment tells
+         the browser to seek there. We also grab the real dimensions here, which sets
+         the frame's aspect ratio before anyone clicks play (no layout jump). */
+      else if(isFile(item.video)){
+        var pv=document.createElement('video');
+        pv.className='poster-vid'; pv.muted=true; pv.setAttribute('playsinline',''); pv.preload='metadata';
+        pv.src=item.video+'#t=0.001';
+        pv.addEventListener('loadeddata',function(){
+          if(pv.videoWidth && pv.videoHeight){
+            vid.style.aspectRatio=pv.videoWidth+' / '+pv.videoHeight;
+            if(pv.videoWidth/pv.videoHeight < 1.2){
+              vid.style.maxWidth='calc(74vh * '+(pv.videoWidth/pv.videoHeight).toFixed(4)+')';
+              vid.style.marginLeft='auto'; vid.style.marginRight='auto';
+            }
+          }
+        });
+        pv.onerror=function(){ pv.remove(); };
+        vid.appendChild(pv);
+      }
+      var scrim=document.createElement('div'); scrim.className='scrim'; vid.appendChild(scrim);
+      var btn=document.createElement('button'); btn.className='play'; btn.setAttribute('aria-label','Play'); btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>'; vid.appendChild(btn);
+      sec.appendChild(vid);
+    } else {
+      var soon=document.createElement('div'); soon.className='vid-soon'; soon.innerHTML=CLOCK+'<span>Video coming soon</span>'; sec.appendChild(soon);
     }
 
-    sec.appendChild(head); sec.appendChild(vid);
+    var below=document.createElement('div'); below.className='below';
+
+    if(item.steps && item.steps.length){
+      var sc=document.createElement('div'); sc.className='card';
+      var h=document.createElement('h4'); h.textContent='Video overview'; sc.appendChild(h);
+      var sl=document.createElement('div'); sl.className='steps';
+      item.steps.forEach(function(st,si){
+        var row=document.createElement('div'); row.className='step';
+        var d=document.createElement('span'); d.className='dot'; d.textContent=String(si+1);
+        var tx=document.createElement('span'); tx.textContent=st; row.appendChild(d); row.appendChild(tx); sl.appendChild(row);
+      });
+      sc.appendChild(sl); below.appendChild(sc);
+    }
+
+    if(item.accordions && item.accordions.length){
+      var ac=document.createElement('div'); ac.className='accs';
+      item.accordions.forEach(function(a){
+        if(!a || !a.q) return;
+        var d=document.createElement('details'); d.className='acc';
+        var body = a.list && a.list.length
+          ? '<ul>'+a.list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>'
+          : (a.a||'');
+        d.innerHTML='<summary>'+esc(a.q)+CHEV+'</summary><div class="acc-body">'+body+'</div>';
+        ac.appendChild(d);
+      });
+      below.appendChild(ac);
+    }
+
+    if(item.docs && item.docs.length){
+      var dc=document.createElement('div'); dc.className='card';
+      var dh=document.createElement('h4'); dc.appendChild(dh);
+      var dl=document.createElement('div'); dl.className='docs';
+      var anyLink=false, anyFile=false;
+      item.docs.forEach(function(doc){
+        if(!doc||!doc.label) return;
+        var link=isLinkUrl(doc.url); if(link){anyLink=true;}else{anyFile=true;}
+        var a=document.createElement('a'); a.className='doc'; a.href=doc.url||'#'; a.target='_blank'; a.rel='noopener';
+        a.innerHTML=(link?LINK_ICON:FILE_ICON)+'<span></span>'; a.querySelector('span').textContent=doc.label; dl.appendChild(a);
+      });
+      dh.textContent = (anyLink&&anyFile) ? 'Documents & links' : (anyLink ? 'Links' : 'Documents');
+      dc.appendChild(dl); below.appendChild(dc);
+    }
+
+    if(item.form && item.form.label){
+      var fa=document.createElement('a'); fa.className='form-cta'; fa.href=item.form.url||'#'; fa.target='_blank'; fa.rel='noopener';
+      fa.innerHTML=PEN_ICON+'<span></span>'; fa.querySelector('span').textContent=item.form.label;
+      below.appendChild(fa);
+    }
+
+    if(below.children.length) sec.appendChild(below);
+
+    var doneBtn=document.createElement('button'); doneBtn.className='done-btn'; doneBtn.type='button';
+    doneBtn.innerHTML='<span class="box">'+CHECK+'</span><span class="lock">'+LOCK+'</span><span class="lbl"></span>';
+    var mo={ i:i, s:s, sec:sec, btn:doneBtn };
+    doneBtn.addEventListener('click', function(){ toggleModule(mo); });
+    mods.push(mo);
+    sec.appendChild(doneBtn);
+
     host.appendChild(sec);
   });
+
+  if(!items.length){ host.remove(); document.getElementById('prog').remove(); }
+
+  /* sequential lock: a module can only be completed once the one above it is complete.
+     Uncompleting a module also clears every module after it, so progress is always in order. */
+  function isUnlocked(idx){ return idx===0 || !!progress[mods[idx-1].s]; }
+  function toggleModule(mo){
+    if(progress[mo.s]){ for(var j=mo.i;j<mods.length;j++){ delete progress[mods[j].s]; } }
+    else { if(!isUnlocked(mo.i)) return; progress[mo.s]=1; }
+    save(progress); renderStates();
+  }
+  function renderStates(){
+    mods.forEach(function(mo){
+      var done=!!progress[mo.s], locked=!done && !isUnlocked(mo.i);
+      mo.sec.classList.toggle('done', done);
+      mo.btn.disabled=locked;
+      mo.btn.classList.toggle('is-locked', locked);
+      mo.btn.querySelector('.lbl').textContent = done ? 'Completed' : (locked ? 'Complete the module above first' : 'Mark module complete');
+    });
+    refreshProgress();
+  }
+  renderStates();
 })();
 </script>
 </body>
