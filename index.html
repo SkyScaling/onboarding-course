@@ -22,6 +22,7 @@
        title    - module heading (numbers come from order, never renumber by hand)
        tag      - small label above the title, optional
        blurb    - short intro under the title, optional
+       notice   - a highlighted banner above the video, optional: { title:"", text:"" }
        video    - YouTube, Vimeo, or a direct file URL, optional
        poster   - thumbnail image, optional
        steps    - "what you'll do" bullets, optional
@@ -273,7 +274,8 @@
 
       { section: "Your brand and content",
         title: "Editing Your Videos (Edits)",
-        blurb: "Simple editing you can do yourself, all in one free app. We use Edits, made by Instagram. Trim it, caption it, post it. Note: we edit your videos for you during your build, and your ads and page videos always. This module is for your own organic posts, so you can keep posting without waiting on anyone.",
+        blurb: "Simple editing you can do yourself, all in one free app. We use Edits, made by Instagram. Trim it, caption it, post it. Full steps in the dropdowns.",
+        notice: { title: "Heads up: we edit your videos for you.", text: "During your build, and your ads and page videos always. This module is for your own organic posts, so you can keep posting without waiting on anyone." },
         video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab2591a6f7a5eaaa0651e.mov", poster: "",
         accordions: [
           { q: "Why we use Edits",
@@ -351,7 +353,8 @@
 
       { section: "How your leads work",
         title: "Resources and Scripts",
-        blurb: "Your sales scripts: cold outreach, discovery call, strategy call, and no-show recovery. We write all four for your audience and go over them with you about a week before your ads go live. Note: in the video I say to adapt them yourself with AI. We now do that for you.",
+        blurb: "Your sales scripts: cold outreach, discovery call, strategy call, and no-show recovery.",
+        notice: { title: "Heads up: we write your scripts for you.", text: "In the video I say to adapt them yourself with AI. You don't have to. We write all four for your audience and go over them with you about a week before your ads go live." },
         video: "https://assets.cdn.filesafe.space/cIEiGPHzRWPAUucJJ6QA/media/6a6ab28b497cd89d24c55120.mov", poster: "",
         accordions: [
           { q: "Cold outreach script",
@@ -468,6 +471,10 @@
   .lesson .tag{font-family:'Space Grotesk';font-weight:700;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
   .lesson h3{font-weight:700;font-size:clamp(18px,2.6vw,22px);letter-spacing:-0.01em}
   .lesson .blurb{color:var(--text-2);font-size:15px;line-height:1.65;margin:0 0 18px 48px}
+  .notice{display:flex;gap:12px;align-items:flex-start;margin:0 0 18px 48px;padding:15px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(82,113,255,0.20),rgba(143,107,255,0.14));border:1px solid rgba(82,113,255,0.55);box-shadow:0 14px 40px -24px var(--accent-glow)}
+  .notice .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:14px;margin-top:1px}
+  .notice .nt{font-size:15px;line-height:1.55;color:var(--text-2)}
+  .notice .nt b{display:block;color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:16px;margin-bottom:3px}
 
   .vid{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#080b14;box-shadow:0 26px 70px -30px rgba(0,0,0,0.9)}
   .vid.play-ready{cursor:pointer}
@@ -548,6 +555,7 @@
     .lesson .lhead{gap:11px;margin-bottom:8px}
     .lesson .num{width:30px;height:30px;font-size:14px}
     .lesson .blurb{margin-left:41px}
+    .notice{margin-left:41px}
     .vid .play{width:58px;height:58px}
     .card{padding:16px 17px}
     .support{margin-top:50px;padding:22px 18px}
@@ -706,6 +714,7 @@
     head.appendChild(num); head.appendChild(tw); sec.appendChild(head);
 
     if(item.blurb){ var bl=document.createElement('p'); bl.className='blurb'; bl.textContent=item.blurb; sec.appendChild(bl); }
+    if(item.notice){ var nb=document.createElement('div'); nb.className='notice'; var ic=document.createElement('div'); ic.className='ic'; ic.textContent='!'; var nt=document.createElement('div'); nt.className='nt'; var nb_t=document.createElement('b'); nb_t.textContent=item.notice.title; nt.appendChild(nb_t); nt.appendChild(document.createTextNode(item.notice.text)); nb.appendChild(ic); nb.appendChild(nt); sec.appendChild(nb); }
 
     /* video, or a "coming soon" placeholder so the layout holds while you record */
     if(item.video){
