@@ -609,6 +609,22 @@
 </div>
 
 <script>
+/* US clients (their time zone tells us) get amazon.com links for the gear list. Everyone else keeps the amazon.ca links. */
+var US_GEAR={
+  "https://amzn.to/4fg4e3B":"https://www.amazon.com/dp/B0DDTGY8FG",
+  "https://amzn.to/44HGz5W":"https://www.amazon.com/dp/B0CY2C7H6S",
+  "https://amzn.to/4vJepTe":"https://www.amazon.com/dp/B0DDL8WGH5",
+  "https://amzn.to/4wzO63b":"https://www.amazon.com/dp/B0B6H8XWRN",
+  "https://amzn.to/4wjBqgH":"https://www.amazon.com/s?k=UBeesize+softbox+lighting+kit",
+  "https://amzn.to/3Tiatv0":"https://www.amazon.com/dp/B0BQMKZYTK",
+  "https://amzn.to/4wsyJsU":"https://www.amazon.com/dp/B08TWVHV6K",
+  "https://amzn.to/4fgEiVl":"https://www.amazon.com/dp/B0FFG96QH3"
+};
+var IS_US=(function(){ var tz=""; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""; }catch(e){}
+  return /^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Juneau|Sitka|Nome|Yakutat|Metlakatla|Adak|Boise|Detroit|Menominee|Indiana\/.+|Kentucky\/.+|North_Dakota\/.+)|Pacific\/Honolulu|US\/.+)$/.test(tz); })();
+function usGear(h){ if(!IS_US || !h) return h; return h.replace(/https:\/\/amzn\.to\/[A-Za-z0-9]+/g,function(u){ return US_GEAR[u]||u; }); }
+</script>
+<script>
 (function(){
   "use strict";
   var C = window.SS_CONFIG || {};
@@ -765,7 +781,7 @@
         var d=document.createElement('details'); d.className='acc';
         var body = a.list && a.list.length
           ? '<ul>'+a.list.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>'
-          : (a.a||'');
+          : usGear(a.a||'');
         d.innerHTML='<summary>'+esc(a.q)+CHEV+'</summary><div class="acc-body">'+body+'</div>';
         ac.appendChild(d);
       });
